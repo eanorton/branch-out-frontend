@@ -2,11 +2,14 @@ import React from 'react';
 
 const Searchbar = (props) => {
   return (
-    <input
-      value={props.term}
-      onChange={props.handleChange}
-      placeholder="Search for Artists"
-      />
+    <form onSubmit={(event)=>props.onSubmit(event)}>
+      <input
+        value={props.term}
+        onChange={props.handleChange}
+        placeholder="Search for Artists"
+        />
+      <input type="submit" value="Submit"/>
+    </form>
   )
 }
 

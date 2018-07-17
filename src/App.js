@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import Success from './containers/SuccessContainer';
+import SuccessContainer from './containers/SuccessContainer';
 
 class App extends Component {
 
@@ -21,7 +21,7 @@ class App extends Component {
         </a>
 
         <Router>
-          <Route exact path="/success" component={Success} />
+          <Route exact path="/success" component={SuccessContainer} />
         </Router>
 
       </div>

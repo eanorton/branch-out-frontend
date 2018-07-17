@@ -5,7 +5,6 @@ class Artists extends Component {
   render() {
     return (
       <ul>
-        "hi"
       </ul>
     )
   }
