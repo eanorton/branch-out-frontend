@@ -16,7 +16,12 @@ class SuccessContainer extends Component {
   }
 
   handleClick = (artist) => {
-    console.log(artist)
+    this.setState({selectedArtist: artist}, ()=>{
+      console.log("artist id", this.state.selectedArtist.id)
+      fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}`)
+      .then(response=>response.json())
+      .then(data=>console.log("response form the click", data))
+    })
   }
 
   fetchArtist = (event) => {
@@ -26,7 +31,7 @@ class SuccessContainer extends Component {
     .then(data=>this.setState({
       searchedArtist: data.searched_artist.artists,
       recommendedArtists: data.recommended_artists.artists
-    }, ()=>console.log("this is the state", this.state)))
+    }))
   }
 
   render() {
