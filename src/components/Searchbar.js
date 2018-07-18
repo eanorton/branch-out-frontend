@@ -8,6 +8,7 @@ const Searchbar = (props) => {
         onChange={props.handleChange}
         placeholder="Search for Artists"
         />
+      <br></br>
       <input type="submit" value="Submit"/>
     </form>
   )
