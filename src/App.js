@@ -21,7 +21,7 @@ class App extends Component {
         </a>
 
         <Router>
-          <Route exact path="/success" component={SuccessContainer} />
+          <Route path="/success" component={SuccessContainer} />
         </Router>
 
       </div>
