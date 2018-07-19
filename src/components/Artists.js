@@ -7,11 +7,12 @@ class Artists extends Component {
 
     let searchedArtistName = this.props.artist.items[0].name
 
-    let recommendedArtists = this.props.recommendedArtists.slice(0,3).map(artist=><ArtistRecs
+    let recommendedArtists = this.props.recommendedArtists.map(array=>array.map(artist=>
+      <ArtistRecs
       key={artist.id}
       artist={artist}
       handleClick={this.props.handleClick}
-      />)
+      />))
 
     return (
       <React.Fragment>

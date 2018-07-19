@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Searchbar from '../components/Searchbar';
 import Artists from '../components/Artists';
+import querystring from 'query-string'
 
 class SuccessContainer extends Component {
 
@@ -8,7 +9,8 @@ class SuccessContainer extends Component {
     searchterm: "",
     searchedArtist: "",
     recommendedArtists: null,
-    selectedArtist: null
+    selectedArtist: null,
+    currentUser: ""
   }
 
   handleChange = (event) => {
@@ -20,8 +22,12 @@ class SuccessContainer extends Component {
       console.log("artist id", this.state.selectedArtist.id)
       fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}`)
       .then(response=>response.json())
-      .then(data=>console.log("response form the click", data))
-    })
+      .then(data=>{
+        let newData = data.recommended_artists.artists.slice(0,3);
+        let newRecommendedArtistsArray = [...this.state.recommendedArtists, newData]
+        this.setState({recommendedArtists: newRecommendedArtistsArray }, ()=>{console.log("recommended artists state", this.state.recommendedArtists)})
+      }
+    )})
   }
 
   fetchArtist = (event) => {
@@ -30,7 +36,7 @@ class SuccessContainer extends Component {
     .then(response=>response.json())
     .then(data=>this.setState({
       searchedArtist: data.searched_artist.artists,
-      recommendedArtists: data.recommended_artists.artists
+      recommendedArtists: [data.recommended_artists.artists.slice(0,3)]
     }))
   }
 
