@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import Searchbar from '../components/Searchbar';
-import Artists from '../components/Artists';
-import querystring from 'query-string';
-import { withRouter } from 'react-router-dom';
+import React, { Component } from "react";
+import Searchbar from "../components/Searchbar";
+import Artists from "../components/Artists";
+import querystring from "query-string";
+import { withRouter } from "react-router-dom";
+import TweenMax from "gsap/TweenMax";
+import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
+import anime from "animejs"
 
 
 class SuccessContainer extends Component {
@@ -12,7 +15,8 @@ class SuccessContainer extends Component {
     searchedArtist: "",
     recommendedArtists: null,
     selectedArtist: null,
-    currentUser: ""
+    currentUser: "",
+
   }
 
   // Sets the search term in state
@@ -42,7 +46,7 @@ class SuccessContainer extends Component {
     event.preventDefault()
     fetch(`http://localhost:4000/api/v1/search-artists/${this.state.searchterm}/${this.state.currentUser}`)
     .then(response=>response.json())
-    .then(data=>this.setState({
+    .then(data=> this.setState({
       searchedArtist: data.searched_artist.artists,
       recommendedArtists: [data.recommended_artists.artists.slice(0,3)]
     }))

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ArtistRecs from './ArtistRecs';
+import anime from 'animejs';
 
 class Artists extends Component {
 
