@@ -21,7 +21,7 @@ class App extends Component {
         </a>
 
         <Router>
-          <Route path="/success" component={SuccessContainer} />
+          <Route path="/success" component={()=><SuccessContainer {...this.props} />} />
         </Router>
 
       </div>

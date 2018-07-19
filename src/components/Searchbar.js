@@ -10,7 +10,7 @@ const Searchbar = (props) => {
           placeholder="Search for Artists"
           />
         <br></br>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Search"/>
       </form>
     </div>
   )
