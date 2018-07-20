@@ -39,7 +39,12 @@ class SuccessContainer extends Component {
       .then(data=>{
         let newData = data.recommended_artists.artists.slice(0,3);
         let newRecommendedArtistsArray = [...this.state.recommendedArtists, newData]
-        this.setState({recommendedArtists: newRecommendedArtistsArray })
+        this.setState({
+          recommendedArtists: newRecommendedArtistsArray,
+          rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
+          rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
+          rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3) 
+        })
       }
     )})
   }
@@ -71,7 +76,7 @@ class SuccessContainer extends Component {
   render() {
     return (
       <div>
-        
+
         <h3>{this.state.currentUser}</h3>
 
         <h4>Now you can search for artists to get recommendations</h4>
