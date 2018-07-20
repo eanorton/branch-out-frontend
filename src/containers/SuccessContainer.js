@@ -5,7 +5,7 @@ import querystring from "query-string";
 import { withRouter } from "react-router-dom";
 import TweenMax from "gsap/TweenMax";
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
-import anime from "animejs"
+import anime from "animejs";
 
 
 class SuccessContainer extends Component {
@@ -16,6 +16,10 @@ class SuccessContainer extends Component {
     recommendedArtists: null,
     selectedArtist: null,
     currentUser: "",
+    searchedArtistTopTracks: null,
+    rec1ArtistTopTracks: null,
+    rec2ArtistTopTracks: null,
+    rec3ArtistTopTracks: null
 
   }
 
@@ -48,8 +52,13 @@ class SuccessContainer extends Component {
     .then(response=>response.json())
     .then(data=> this.setState({
       searchedArtist: data.searched_artist.artists,
-      recommendedArtists: [data.recommended_artists.artists.slice(0,3)]
-    }))
+      recommendedArtists: [data.recommended_artists.artists.slice(0,3)],
+      searchedArtistTopTracks: data.searched_artist_tracks.tracks.slice(0,3),
+      rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
+      rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
+      rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3)
+    }, ()=> {console.log("this is the state from search fetch", this.state)}
+  ))
   }
 
 
@@ -62,10 +71,15 @@ class SuccessContainer extends Component {
   render() {
     return (
       <div>
-        <h1>You've Logged In!</h1>
-        <h2>Now you can search for artists to get recommendations</h2>
+        
+        <h3>{this.state.currentUser}</h3>
+
+        <h4>Now you can search for artists to get recommendations</h4>
+
         <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
-        {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists}/> : null}
+
+        {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
+
       </div>
     )
   }

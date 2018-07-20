@@ -5,9 +5,12 @@ class ArtistRecs extends Component {
 
   render() {
 
+    console.log("hihihihihi", this.props.artistTopTracks)
+
     return (
-      <div onClick={()=>{this.props.handleClick(this.props.artist)}}>
-        <p style={{fontWeight: "bold"}}>{this.props.artist.name}</p>
+      <div>
+        <p style={{fontWeight: "bold"}} onClick={()=>{this.props.handleClick(this.props.artist)}}>{this.props.artist.name}</p>
+        {this.props.artistTopTracks.map(t=><audio src={t.preview_url} controls="play">{t.name}</audio>)}
       </div>
     )
   }
