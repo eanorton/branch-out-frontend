@@ -6,7 +6,7 @@ class Artists extends Component {
 
   render() {
 
-    console.log("props in the artists component", this.props)
+    console.log("edward", this.props.artist.items[0].images[2])
 
     let searchedArtistName = this.props.artist.items[0].name
 
@@ -22,6 +22,7 @@ class Artists extends Component {
 
     return (
       <React.Fragment>
+        <img src={this.props.artist.items[0].images[2].url} width={this.props.artist.items[0].images[2].width} height={this.props.artist.items[0].images[2].height}/>
         <h3>Results for {searchedArtistName}</h3>
         {this.props.searchedArtistTopTracks.map(t=><audio src={t.preview_url} controls="play">{t.name}</audio>)}
         {recommendedArtists}

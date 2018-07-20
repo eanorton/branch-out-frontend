@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import anime from 'animejs';
 
-class ArtistRecs extends Component {
-
-  render() {
-
-    console.log("hihihihihi", this.props.artistTopTracks)
-
-    return (
-      <div>
-        <p style={{fontWeight: "bold"}} onClick={()=>{this.props.handleClick(this.props.artist)}}>{this.props.artist.name}</p>
-        {this.props.artistTopTracks.map(t=><audio src={t.preview_url} controls="play">{t.name}</audio>)}
-      </div>
-    )
-  }
+const ArtistRecs = (props) => {
+  return (
+    <div>
+      <img src={props.artist.images[2].url} width={props.artist.images[2].width} height={props.artist.images[2].height} />
+      <p style={{fontWeight: "bold"}} onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</p>
+      {props.artistTopTracks.map(t=><audio src={t.preview_url} controls="play">{t.name}</audio>)}
+    </div>
+  )
 }
 
 export default ArtistRecs;

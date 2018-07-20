@@ -20,7 +20,6 @@ class SuccessContainer extends Component {
     rec1ArtistTopTracks: null,
     rec2ArtistTopTracks: null,
     rec3ArtistTopTracks: null
-
   }
 
   // Sets the search term in state
@@ -43,7 +42,7 @@ class SuccessContainer extends Component {
           recommendedArtists: newRecommendedArtistsArray,
           rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
           rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
-          rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3) 
+          rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3)
         })
       }
     )})
@@ -76,15 +75,14 @@ class SuccessContainer extends Component {
   render() {
     return (
       <div>
-
         <h3>{this.state.currentUser}</h3>
 
-        <h4>Now you can search for artists to get recommendations</h4>
+        <h4>Search by your favorite Artists/Musicians to get recommendations!</h4>
+
 
         <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
         {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
-
       </div>
     )
   }
