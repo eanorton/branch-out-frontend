@@ -6,8 +6,6 @@ class Artists extends Component {
 
   render() {
 
-    console.log("edward", this.props.artist.items[0].images[2])
-
     let searchedArtistName = this.props.artist.items[0].name
 
     let artistRecArray = [this.props.rec1ArtistTopTracks, this.props.rec2ArtistTopTracks, this.props.rec3ArtistTopTracks]
@@ -22,7 +20,7 @@ class Artists extends Component {
 
     return (
       <React.Fragment>
-        <img src={this.props.artist.items[0].images[2].url} width={this.props.artist.items[0].images[2].width} height={this.props.artist.items[0].images[2].height}/>
+        <img src={this.props.artist.items[0].images[2].url} width="250" height="250"/>
         <h3>Results for {searchedArtistName}</h3>
         {this.props.searchedArtistTopTracks.map(t=><audio src={t.preview_url} controls="play">{t.name}</audio>)}
         {recommendedArtists}

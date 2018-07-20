@@ -52,17 +52,18 @@ class SuccessContainer extends Component {
 
   fetchArtist = (event) => {
     event.preventDefault()
-    fetch(`http://localhost:4000/api/v1/search-artists/${this.state.searchterm}/${this.state.currentUser}`)
-    .then(response=>response.json())
-    .then(data=> this.setState({
-      searchedArtist: data.searched_artist.artists,
-      recommendedArtists: [data.recommended_artists.artists.slice(0,3)],
-      searchedArtistTopTracks: data.searched_artist_tracks.tracks.slice(0,3),
-      rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
-      rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
-      rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3)
-    }, ()=> {console.log("this is the state from search fetch", this.state)}
-  ))
+    if (this.state.searchterm !== "") {
+      fetch(`http://localhost:4000/api/v1/search-artists/${this.state.searchterm}/${this.state.currentUser}`)
+      .then(response=>response.json())
+      .then(data=> this.setState({
+        searchedArtist: data.searched_artist.artists,
+        recommendedArtists: [data.recommended_artists.artists.slice(0,3)],
+        searchedArtistTopTracks: data.searched_artist_tracks.tracks.slice(0,3),
+        rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
+        rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
+        rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3)
+      }, ()=> {console.log("this is the state from search fetch", this.state)}))
+    }
   }
 
 
