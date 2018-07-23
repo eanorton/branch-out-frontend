@@ -36,13 +36,22 @@ class SuccessContainer extends Component {
       fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}/${this.state.currentUser}`)
       .then(response=>response.json())
       .then(data=>{
-        let newData = data.recommended_artists.artists.slice(0,3);
-        let newRecommendedArtistsArray = [...this.state.recommendedArtists, newData]
+        let newArtists = data.recommended_artists.artists.slice(0,3);
+        let newRecommendedArtistsArray = [...this.state.recommendedArtists, newArtists];
+
+        let newArtist1Recs = data.rec1_artist_tracks.tracks.slice(0,3);
+        let newArtist2Recs = data.rec2_artist_tracks.tracks.slice(0,3);
+        let newArtist3Recs = data.rec3_artist_tracks.tracks.slice(0,3);
+
+        let newArtist1TrackArray = [...this.state.rec1ArtistTopTracks, newArtist1Recs];
+        let newArtist2TrackArray = [...this.state.rec2ArtistTopTracks, newArtist2Recs];
+        let newArtist3TrackArray = [...this.state.rec3ArtistTopTracks, newArtist3Recs];
+
         this.setState({
           recommendedArtists: newRecommendedArtistsArray,
-          rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
-          rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
-          rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3)
+          rec1ArtistTopTracks: newArtist1TrackArray,
+          rec2ArtistTopTracks: newArtist2TrackArray,
+          rec3ArtistTopTracks: newArtist3TrackArray
         })
       }
     )})
@@ -59,9 +68,9 @@ class SuccessContainer extends Component {
         searchedArtist: data.searched_artist.artists,
         recommendedArtists: [data.recommended_artists.artists.slice(0,3)],
         searchedArtistTopTracks: data.searched_artist_tracks.tracks.slice(0,3),
-        rec1ArtistTopTracks: data.rec1_artist_tracks.tracks.slice(0,3),
-        rec2ArtistTopTracks: data.rec2_artist_tracks.tracks.slice(0,3),
-        rec3ArtistTopTracks: data.rec3_artist_tracks.tracks.slice(0,3)
+        rec1ArtistTopTracks: [data.rec1_artist_tracks.tracks.slice(0,3)],
+        rec2ArtistTopTracks: [data.rec2_artist_tracks.tracks.slice(0,3)],
+        rec3ArtistTopTracks: [data.rec3_artist_tracks.tracks.slice(0,3)]
       }, ()=> {console.log("this is the state from search fetch", this.state)}))
     }
   }
