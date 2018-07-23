@@ -3,16 +3,14 @@ import anime from 'animejs';
 
 const ArtistRecs = (props) => {
 
-  console.log(props.artist.images)
-
   return (
 
-    <div className="unitlessValue">
-      <img src={props.artist.images[1].url} width="250" height="250" />
+    <div>
+      <img src={props.artist.images[0].url} width="200" height="200" />
 
       <p style={{fontWeight: "bold"}} onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</p>
 
-      {props.artistTopTracks.map(t=><audio src={t.preview_url} controls="play"> {t.name} </audio>)}
+      {props.artistTopTracks.map(t=><audio key={t.id} src={t.preview_url} controls="play"> {t.name} </audio>)}
     </div>
   )
 }

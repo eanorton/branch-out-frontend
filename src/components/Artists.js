@@ -20,10 +20,18 @@ class Artists extends Component {
 
     return (
       <React.Fragment>
-        <img src={this.props.artist.items[0].images[2].url} width="250" height="250"/>
-        <h3>Results for {searchedArtistName}</h3>
-        {this.props.searchedArtistTopTracks.map(t=><audio src={t.preview_url} controls="play">{t.name}</audio>)}
+
+        <img src={this.props.artist.items[0].images[0].url} width="200" height="200"/>
+
+        <h3>Recommendations Based On {searchedArtistName}</h3>
+
+        {this.props.searchedArtistTopTracks.map(t=><audio
+          key={t.id}
+          src={t.preview_url}
+          controls="play">{t.name}</audio>)}
+
         {recommendedArtists}
+
       </React.Fragment>
     )
   }

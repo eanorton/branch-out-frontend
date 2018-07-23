@@ -83,6 +83,8 @@ class SuccessContainer extends Component {
 
         <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
+      <br></br>
+
         {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
       </div>
     )

@@ -16,9 +16,9 @@ class App extends Component {
           <h1 className="App-title">BRANCH OUT WIP</h1>
         </header>
 
-        <a href="http://localhost:4000/api/v1/login">
-          <button>CLICK TO LOGIN WITH SPOTIFY</button>
-        </a>
+        <Router>
+          <Route exact path="/" render={ ()=>(<form><button type="submit" formaction="http://localhost:4000/api/v1/login">CLICK TO LOGIN WITH SPOTIFY</button></form>)} />
+        </Router>
 
         <Router>
           <Route path="/success" component={()=><SuccessContainer {...this.props} />} />
