@@ -28,6 +28,7 @@ class Artists extends Component {
         {this.props.searchedArtistTopTracks.map(t=><iframe
           src={`https://open.spotify.com/embed?uri=${t.uri}`}
           key={t.id}
+          style={{padding: '10px'}}
           width="300"
           height="80"
           frameBorder="0"

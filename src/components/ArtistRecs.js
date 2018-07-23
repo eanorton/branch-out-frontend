@@ -21,7 +21,7 @@ const ArtistRecs = (props) => {
         src={`https://open.spotify.com/embed?uri=${t.uri}`}
         key={t.id}
         style={{padding: '10px'}}
-        width="80"
+        width="300"
         height="80"
         frameBorder="0.25"
         allowtransparency="true"
