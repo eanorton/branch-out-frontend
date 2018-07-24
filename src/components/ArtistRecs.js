@@ -4,6 +4,7 @@ import anime from 'animejs';
 const ArtistRecs = (props) => {
 
   let artistName = props.artist.name
+  let artistId = props.artist.id
 
   let filteredArtists = props.artistTopTracks.filter(trackObj=>trackObj[0].artists[0].name === artistName)[0]
 
@@ -20,7 +21,7 @@ const ArtistRecs = (props) => {
         key={t.id}
         style={{padding: '10px'}}
         width="300"
-        height="80"
+        height="100"
         frameBorder="0.25"
         allowtransparency="true"
         allow="encrypted-media"></iframe>)}

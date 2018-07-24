@@ -30,7 +30,7 @@ class Artists extends Component {
           key={t.id}
           style={{padding: '10px'}}
           width="300"
-          height="80"
+          height="100"
           frameBorder="0"
           allowtransparency="true"
           allow="encrypted-media"></iframe>)}

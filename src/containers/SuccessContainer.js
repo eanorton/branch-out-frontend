@@ -6,6 +6,9 @@ import { withRouter } from "react-router-dom";
 import TweenMax from "gsap/TweenMax";
 import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
 import anime from "animejs";
+import { Button } from 'semantic-ui-react';
+
+
 
 
 class SuccessContainer extends Component {
@@ -26,13 +29,12 @@ class SuccessContainer extends Component {
 
   handleChange = (event) => {
     this.setState({searchterm: event.target.value})
-  }
+  };
 
   // Fetches once a user clicks on one of the recommended artists and appends
 
   handleClick = (artist) => {
     this.setState({selectedArtist: artist}, ()=>{
-      console.log("artist id", this.state.selectedArtist.id)
       fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}/${this.state.currentUser}`)
       .then(response=>response.json())
       .then(data=>{
@@ -55,7 +57,7 @@ class SuccessContainer extends Component {
         })
       }
     )})
-  }
+  };
 
   // Fetches artists based on initial search by user
 
@@ -71,40 +73,36 @@ class SuccessContainer extends Component {
         rec1ArtistTopTracks: [data.rec1_artist_tracks.tracks.slice(0,3)],
         rec2ArtistTopTracks: [data.rec2_artist_tracks.tracks.slice(0,3)],
         rec3ArtistTopTracks: [data.rec3_artist_tracks.tracks.slice(0,3)]
-      }, ()=> {console.log("this is the state from search fetch", this.state)}))
+      }))
     }
-  }
+  };
 
 
   // Setting the user on mount based on the username getting passed through the URL
 
   componentDidMount(){
     this.setState({currentUser: this.props.location.pathname.split("/")[2]})
-  }
+  };
 
   render() {
     return (
       <React.Fragment>
-        <form>
-          <button type="submit" formAction={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}>LOGOUT</button>
-        </form>
 
-      <div>
-        <h3>{this.state.currentUser}</h3>
+        <div>
+          <h4>Search by your favorite Artists/Musicians to get recommendations!</h4>
 
-        <h4>Search by your favorite Artists/Musicians to get recommendations!</h4>
+          <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
-
-        <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
-
-      <br></br>
-
-        {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
-      </div>
+          {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
+        </div>
     </React.Fragment>
     )
-  }
+  };
 
 }
 
 export default withRouter(SuccessContainer);
+
+{/*        <form>
+          <Button color="black" style={{borderRadius: "20px"}} type="submit" formAction={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}>LOGOUT</Button>
+        </form>*/}
