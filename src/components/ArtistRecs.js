@@ -6,13 +6,13 @@ const ArtistRecs = (props) => {
   let artistName = props.artist.name
   let artistId = props.artist.id
 
-  let filteredArtists = props.artistTopTracks.filter(trackObj=>trackObj[0].artists[0].name === artistName)[0]
+  let filteredArtists = props.artistTopTracks.filter(trackObj=>trackObj[0].artists[0].name === artistName)[0];
 
   return (
 
     <div>
 
-      <p style={{fontWeight: "bold"}} onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</p>
+      <h3 onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</h3>
 
       {/*<img src={props.artist.images[0].url} width="200" height="200" /> */}
 

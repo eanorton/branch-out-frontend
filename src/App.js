@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import SuccessContainer from './containers/SuccessContainer';
-import { Button } from 'semantic-ui-react';
 import NavBar from './components/NavBar';
 
 class App extends Component {
@@ -16,9 +15,9 @@ class App extends Component {
           <Route component={()=><NavBar {...this.props} />} />
         </Router>
 
-        <header className="App-header">
+        <header>
           {/*<img src={logo} className="App-logo" alt="logo" />*/}
-          <h1 className="App-title">BRANCH OUT WIP</h1>
+          <h1>BRANCH OUT WIP</h1>
         </header>
 
         <Router>

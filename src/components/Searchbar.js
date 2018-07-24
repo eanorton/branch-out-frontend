@@ -1,18 +1,18 @@
 import React from 'react';
-import { Input } from 'semantic-ui-react'
+import { Input, Button, Form } from 'semantic-ui-react'
 
 const Searchbar = (props) => {
   return (
     <div>
-      <form onSubmit={(event)=>props.onSubmit(event)}>
+      <Form onSubmit={(event)=>props.onSubmit(event)}>
         <Input
           value={props.term}
           onChange={props.handleChange}
           placeholder="Search for Artists"
+          style={{padding: "0.5px", width: "20%"}}
           />
-        <br></br>
-        <Input type="submit" value="Search"/>
-      </form>
+        <Button color="green" type="submit" value="Search">SEARCH</Button>
+      </Form>
     </div>
   )
 }

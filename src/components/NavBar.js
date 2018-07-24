@@ -24,8 +24,9 @@ class NavBar extends Component {
     return (
       <React.Fragment>
       {this.state.currentUser ?
-        <Menu inverted>
+        <Menu pointed="true" inverted style={{width: "100%", background: "#000000"}}>
           <Menu.Item
+            style={{padding: "18px"}}
             name={this.state.currentUser}
             active={activeItem === this.state.currentUser}
             onClick={this.handleItemClick}
@@ -33,6 +34,7 @@ class NavBar extends Component {
             position="right"
             />
           <Menu.Item
+            style={{padding: "18px"}}
             name='Sign Out'
             active={activeItem === 'Sign Out'}
             onClick={this.handleItemClick}
@@ -42,6 +44,7 @@ class NavBar extends Component {
         </Menu> :
         <Menu inverted>
           <Menu.Item
+            style={{padding: "18px"}}
             name="Sign In"
             active={activeItem === "Sign In"}
             onClick={this.handleItemClick}
