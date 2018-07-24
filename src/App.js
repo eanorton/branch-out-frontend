@@ -17,7 +17,7 @@ class App extends Component {
         </header>
 
         <Router>
-          <Route exact path="/" render={ ()=>(<form><button type="submit" formaction="http://localhost:4000/api/v1/login">CLICK TO LOGIN WITH SPOTIFY</button></form>)} />
+          <Route exact path="/" render={ ()=>(<form><button type="submit" formAction="http://localhost:4000/api/v1/login">CLICK TO LOGIN WITH SPOTIFY</button></form>)} />
         </Router>
 
         <Router>

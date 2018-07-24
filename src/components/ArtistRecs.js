@@ -5,8 +5,6 @@ const ArtistRecs = (props) => {
 
   let artistName = props.artist.name
 
-  console.log(artistName)
-
   let filteredArtists = props.artistTopTracks.filter(trackObj=>trackObj[0].artists[0].name === artistName)[0]
 
   return (

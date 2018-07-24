@@ -84,6 +84,11 @@ class SuccessContainer extends Component {
 
   render() {
     return (
+      <React.Fragment>
+        <form>
+          <button type="submit" formAction={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}>LOGOUT</button>
+        </form>
+
       <div>
         <h3>{this.state.currentUser}</h3>
 
@@ -96,6 +101,7 @@ class SuccessContainer extends Component {
 
         {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
       </div>
+    </React.Fragment>
     )
   }
 
