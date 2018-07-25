@@ -24,7 +24,7 @@ class NavBar extends Component {
     return (
       <React.Fragment>
       {this.state.currentUser ?
-        <Menu pointed="true" inverted style={{width: "100%", background: "#000000"}}>
+        <Menu inverted style={{width: "100%", background: "#000000"}}>
           <Menu.Item
             style={{padding: "18px"}}
             name={this.state.currentUser}

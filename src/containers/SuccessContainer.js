@@ -9,8 +9,6 @@ import anime from "animejs";
 import { Button } from 'semantic-ui-react';
 
 
-
-
 class SuccessContainer extends Component {
 
   state = {
@@ -85,6 +83,7 @@ class SuccessContainer extends Component {
   };
 
   render() {
+
     return (
       <React.Fragment>
 
@@ -105,4 +104,4 @@ export default withRouter(SuccessContainer);
 
 {/*        <form>
           <Button color="black" style={{borderRadius: "20px"}} type="submit" formAction={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}>LOGOUT</Button>
-        </form>*/}
+        </form>    */}
