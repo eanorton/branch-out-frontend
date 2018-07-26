@@ -94,13 +94,16 @@ const particleOptions = {
 
 class App extends Component {
 
+
+
   render() {
 
     return (
       <React.Fragment>
-        <Particles params={particleOptions} style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}>
+
+        <Particles params={particleOptions} style={{position: 'absolute'}}>
         </Particles>
-        
+
         <div className="App">
           <Router>
             <Route component={()=><NavBar {...this.props} />} />
