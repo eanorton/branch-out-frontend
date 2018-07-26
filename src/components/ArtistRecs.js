@@ -1,5 +1,6 @@
 import React from "react";
 import anime from "animejs";
+import {Header} from "semantic-ui-react";
 
 const ArtistRecs = (props) => {
 
@@ -14,7 +15,7 @@ const ArtistRecs = (props) => {
 
     <div>
 
-      <h3 onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</h3>
+      <Header style={{fontFamily: 'Raleway'}} size="large" onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</Header>
 
       {/*<img src={props.artist.images[0].url} width="200" height="200" /> */}
 

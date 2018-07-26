@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ArtistRecs from "./ArtistRecs";
 import anime from "animejs";
-import { Image, Card } from "semantic-ui-react";
+import { Image, Header } from "semantic-ui-react";
 
 class Artists extends Component {
 
@@ -29,7 +29,7 @@ class Artists extends Component {
 
         <Image src={this.props.artist.items[0].images[0].url} size="medium" circular centered style={{padding: "10px"}} />
 
-        <h3>{searchedArtistName}</h3>
+        <Header size="huge" style={{fontFamily: 'Raleway'}}>{searchedArtistName}</Header>
 
         {this.props.searchedArtistTopTracks.map(t=>
           <iframe

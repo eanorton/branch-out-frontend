@@ -109,13 +109,12 @@ class App extends Component {
             <Route component={()=><NavBar {...this.props} />} />
           </Router>
 
-          <Header style={{paddingTop: "100px", letterSpacing: "3px" }}>
-            {/*<img src={logo} className="App-logo" alt="logo" />*/}
-            <h1 className="main-title">BRANCH <span className="thin">OUT</span></h1>
+          <Header style={{paddingTop: "100px", letterSpacing: "4px"}}>
+            <h1 className="main-title" style={{fontFamily: 'Raleway'}}>BRANCH <span className="thin" style={{fontFamily: 'Raleway'}}>OUT</span></h1>
           </Header>
 
           <Router>
-            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"200", letterSpacing: "3px"}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
+            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"200", letterSpacing: "4px"}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
           </Router>
 
           <Router>
