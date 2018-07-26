@@ -36,10 +36,21 @@ iframe {
 
   border-radius: 6px;
 
-  box-shadow: 4px 4px 14px #000;
+  box-shadow: 4px 4px 14px #000000;
 }
 
 img {
   margin-top: 50px;
   margin-bottom: 30px;
+}
+
+.artist-rec-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 1s;
+  color: #3FB53F;
+}
+
+.artist-name:hover {
+  cursor: default;
 }

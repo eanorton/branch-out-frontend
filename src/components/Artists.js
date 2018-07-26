@@ -32,7 +32,7 @@ class Artists extends Component {
 
         <Image src={this.props.artist.items[0].images[0].url} size="medium" circular centered style={{padding: "10px"}} />
 
-        <Header size="huge" style={{fontFamily: 'Raleway'}}>{searchedArtistName}</Header>
+        <h1 className="artist-name" style={{fontFamily: 'Raleway'}}>{searchedArtistName}</h1>
 
         {this.props.searchedArtistTopTracks.map(t=>
           <iframe

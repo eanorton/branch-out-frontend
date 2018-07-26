@@ -15,7 +15,7 @@ const ArtistRecs = (props) => {
 
     <div>
 
-      <Header style={{fontFamily: 'Raleway'}} size="large" onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</Header>
+      <h1 className="artist-rec-name" style={{fontFamily: 'Raleway'}} size="large" onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</h1>
 
       {/*<img src={props.artist.images[0].url} width="200" height="200" /> */}
 
