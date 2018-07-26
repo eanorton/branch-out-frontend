@@ -10,6 +10,8 @@ const ArtistRecs = (props) => {
 
   return (
 
+    <React.Fragment>
+
     <div>
 
       <h3 onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</h3>
@@ -29,6 +31,7 @@ const ArtistRecs = (props) => {
       {/*props.artistTopTracks.map(t=><audio key={t.id} src={t.preview_url} controls="play"> {t.name} </audio>)*/}
 
     </div>
+    </React.Fragment>
   )
 }
 

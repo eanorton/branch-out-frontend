@@ -101,7 +101,7 @@ class App extends Component {
     return (
       <React.Fragment>
 
-        <Particles params={particleOptions} style={{position: 'absolute'}}>
+        <Particles params={particleOptions} style={{position: 'absolute'}} height={{height: "20"}}>
         </Particles>
 
         <div className="App">

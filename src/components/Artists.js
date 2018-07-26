@@ -25,7 +25,7 @@ class Artists extends Component {
       />))
 
     return (
-      <React.Fragment>
+      <div>
 
         <Image src={this.props.artist.items[0].images[0].url} size='medium' circular centered style={{padding: "10px"}} />
 
@@ -44,7 +44,7 @@ class Artists extends Component {
 
         {recommendedArtists}
 
-      </React.Fragment>
+      </div>
     )
   }
 
