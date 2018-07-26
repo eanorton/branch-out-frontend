@@ -6,7 +6,10 @@ import { Image, Header } from "semantic-ui-react";
 class Artists extends Component {
 
   componentDidUpdate(){
-
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
   };
 
 

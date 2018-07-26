@@ -110,7 +110,7 @@ class App extends Component {
           </Router>
 
           <Header style={{paddingTop: "100px", letterSpacing: "4px"}}>
-            <h1 className="main-title" style={{fontFamily: 'Raleway'}}>BRANCH <span className="thin" style={{fontFamily: 'Raleway'}}>OUT</span></h1>
+            <h1 className="main-title" style={{fontFamily: 'Raleway', fontSize: "70px"}}>BRANCH <span className="thin" style={{fontFamily: 'Raleway'}}>OUT</span></h1>
           </Header>
 
           <Router>
