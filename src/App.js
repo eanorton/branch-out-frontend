@@ -68,7 +68,7 @@ const particleOptions = {
       }
     },
     interactivity:{
-      "detect_on":"window",
+      detect_on: "window",
       "events": {
         "onhover": {
           "enable":true,
@@ -101,7 +101,7 @@ class App extends Component {
     return (
       <React.Fragment>
 
-        <Particles params={particleOptions} style={{position: 'absolute'}} height={{height: "20"}}>
+        <Particles params={particleOptions} style={{position: 'absolute'}} height="60%">
         </Particles>
 
         <div className="App">
@@ -109,13 +109,13 @@ class App extends Component {
             <Route component={()=><NavBar {...this.props} />} />
           </Router>
 
-          <Header>
+          <Header style={{paddingTop: "100px", letterSpacing: "3px" }}>
             {/*<img src={logo} className="App-logo" alt="logo" />*/}
             <h1 className="main-title">BRANCH <span className="thin">OUT</span></h1>
           </Header>
 
           <Router>
-            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"200"}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
+            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"200", letterSpacing: "3px"}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
           </Router>
 
           <Router>

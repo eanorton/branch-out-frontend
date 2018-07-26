@@ -88,7 +88,7 @@ class SuccessContainer extends Component {
       <React.Fragment>
 
         <div>
-          <h4>Search by your favorite Artists/Musicians to get recommendations!</h4>
+          <h4 style={{letterSpacing: "1px"}}>Search by your favorite Artists/Musicians to get recommendations!</h4>
 
           <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
