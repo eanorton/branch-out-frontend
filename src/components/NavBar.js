@@ -24,13 +24,13 @@ class NavBar extends Component {
     return (
       <React.Fragment>
       {this.state.currentUser ?
-        <Menu inverted style={{width: "100%", background: "#000000"}}>
+        <Menu inverted style={{width: "100%", background: 'rgba(71, 71, 71, 0.3)'}}>
           <Menu.Item
             style={{padding: "18px"}}
             name={this.state.currentUser}
             active={activeItem === this.state.currentUser}
             onClick={this.handleItemClick}
-            color="green"
+            color="white"
             position="right"
             />
           <Menu.Item
@@ -39,16 +39,16 @@ class NavBar extends Component {
             active={activeItem === 'Sign Out'}
             onClick={this.handleItemClick}
             href={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}
-            color="green"
+            color="white"
             />
         </Menu> :
-        <Menu inverted>
+        <Menu inverted style={{background: 'rgba(71, 71, 71, 0.5)'}}>
           <Menu.Item
             style={{padding: "18px"}}
             name="Sign In"
             active={activeItem === "Sign In"}
             onClick={this.handleItemClick}
-            color="green"
+            color="white"
             href="http://localhost:4000/api/v1/login"
             position="right"
             />

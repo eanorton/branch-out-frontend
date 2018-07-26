@@ -10,10 +10,10 @@ import Particles from 'react-particles-js';
 const particleOptions = {
   particles: {
     number: {
-      value: 28,
+      value: 35,
       density: {
         enable: true,
-        value_area: 631}
+        value_area: 470}
       },
       color: {
         value: "#21ba45"
@@ -38,7 +38,7 @@ const particleOptions = {
         }
       },
       size: {
-        value: 2,
+        value: 2.5,
         random: true,
         anim: {
           enable: false,
@@ -56,10 +56,10 @@ const particleOptions = {
       },
       move: {
         enable: true,
-        speed: 6,
+        speed: 3,
         random: false,
         straight: false,
-        bounce: false,
+        bounce: true,
         attract: {
           enable: false,
           rotateX: 600,

@@ -1,5 +1,5 @@
-import React from 'react';
-import anime from 'animejs';
+import React from "react";
+import anime from "animejs";
 
 const ArtistRecs = (props) => {
 
@@ -21,7 +21,7 @@ const ArtistRecs = (props) => {
       {filteredArtists.map(t=><iframe
         src={`https://open.spotify.com/embed?uri=${t.uri}`}
         key={t.id}
-        style={{padding: '10px'}}
+        style={{padding: "10px"}}
         width="300"
         height="100"
         frameBorder="0.25"

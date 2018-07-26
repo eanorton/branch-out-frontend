@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import ArtistRecs from './ArtistRecs';
-import anime from 'animejs';
-import { Image, Card } from 'semantic-ui-react';
+import React, { Component } from "react";
+import ArtistRecs from "./ArtistRecs";
+import anime from "animejs";
+import { Image, Card } from "semantic-ui-react";
 
 class Artists extends Component {
 
@@ -25,9 +25,9 @@ class Artists extends Component {
       />))
 
     return (
-      <div>
+      <React.Fragment>
 
-        <Image src={this.props.artist.items[0].images[0].url} size='medium' circular centered style={{padding: "10px"}} />
+        <Image src={this.props.artist.items[0].images[0].url} size="medium" circular centered style={{padding: "10px"}} />
 
         <h3>{searchedArtistName}</h3>
 
@@ -35,16 +35,16 @@ class Artists extends Component {
           <iframe
           src={`https://open.spotify.com/embed?uri=${t.uri}`}
           key={t.id}
-          style={{padding: '10px'}}
+          style={{padding: "10px"}}
           width="300"
           height="100"
-          frameBorder="0"
+          frameBorder="0.25"
           allowtransparency="true"
           allow="encrypted-media"></iframe>)}
 
         {recommendedArtists}
 
-      </div>
+      </React.Fragment>
     )
   }
 

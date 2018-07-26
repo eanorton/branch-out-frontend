@@ -27,3 +27,14 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+
+iframe {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+
+  border-radius: 6px;
+
+  box-shadow: 4px 4px 14px #000;
+}
