@@ -12,7 +12,6 @@ class Artists extends Component {
     });
   };
 
-
   render() {
 
     let searchedArtistName = this.props.artist.items[0].name
@@ -32,7 +31,7 @@ class Artists extends Component {
 
         <Image src={this.props.artist.items[0].images[0].url} size="medium" circular centered style={{padding: "10px"}} />
 
-        <h1 className="artist-name" style={{fontFamily: 'Raleway'}}>{searchedArtistName}</h1>
+        <h1 className="artist-name" style={{fontFamily: 'Raleway, sans-serif'}}>{searchedArtistName}</h1>
 
         {this.props.searchedArtistTopTracks.map(t=>
           <iframe

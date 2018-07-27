@@ -110,11 +110,11 @@ class App extends Component {
           </Router>
 
           <Header style={{paddingTop: "100px", letterSpacing: "4px"}}>
-            <h1 className="main-title" style={{fontFamily: 'Raleway', fontSize: "70px"}}>BRANCH <span className="thin" style={{fontFamily: 'Raleway'}}>OUT</span></h1>
+            <h1 className="main-title" style={{fontFamily: 'Raleway, sans-serif', fontSize: "70px"}}>BRANCH <span className="thin" style={{fontFamily: 'Raleway'}}>OUT</span></h1>
           </Header>
 
           <Router>
-            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"200", letterSpacing: "4px"}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
+            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"400", letterSpacing: "4px", fontFamily: 'Raleway, sans-serif'}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
           </Router>
 
           <Router>

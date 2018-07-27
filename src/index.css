@@ -15,12 +15,11 @@ body {
 .content {
   min-height: 100%;
   min-width: 1024px;
-
    /* Set up proportionate scaling */
   width: 100%;
   height: auto;
   padding: 0;
-  background: linear-gradient(to bottom, #47c565, #ece9e6  60%) no-repeat center center fixed;
+  background: linear-gradient(to bottom, #47c565, #ece9e6 60%) no-repeat center center fixed;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -33,9 +32,7 @@ iframe {
   margin-top: 10px;
   margin-bottom: 30px;
   margin-left: 20px;
-
   border-radius: 6px;
-
   box-shadow: 4px 4px 14px #000000;
 }
 

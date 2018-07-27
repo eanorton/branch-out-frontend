@@ -1,13 +1,15 @@
 import React from "react";
 import anime from "animejs";
-import {Header} from "semantic-ui-react";
+
 
 const ArtistRecs = (props) => {
 
   let artistName = props.artist.name
   let artistId = props.artist.id
 
-  let filteredArtists = props.artistTopTracks.filter(trackObj=>trackObj[0].artists[0].name === artistName)[0];
+  let filteredArtists = props.artistTopTracks.filter(trackObj=> {
+    return trackObj[0].artists.filter(artist=>artist.name === artistName)
+  })[0];
 
   return (
 
@@ -15,7 +17,7 @@ const ArtistRecs = (props) => {
 
     <div>
 
-      <h1 className="artist-rec-name" style={{fontFamily: 'Raleway'}} size="large" onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</h1>
+      <h1 className="artist-rec-name" style={{fontFamily: 'Raleway, sans-serif'}} onClick={()=>{props.handleClick(props.artist)}}>{props.artist.name}</h1>
 
       {/*<img src={props.artist.images[0].url} width="200" height="200" /> */}
 
