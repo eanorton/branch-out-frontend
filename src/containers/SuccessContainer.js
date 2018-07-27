@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import Searchbar from "../components/Searchbar";
 import Artists from "../components/Artists";
-import querystring from "query-string";
 import { withRouter } from "react-router-dom";
-import TweenMax from "gsap/TweenMax";
-import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
-import anime from "animejs";
 import { Button } from 'semantic-ui-react';
 
 
@@ -94,7 +90,7 @@ class SuccessContainer extends Component {
 
           {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} rec1ArtistTopTracks={this.state.rec1ArtistTopTracks} rec2ArtistTopTracks={this.state.rec2ArtistTopTracks} rec3ArtistTopTracks={this.state.rec3ArtistTopTracks}/> : null}
         </div>
-    </React.Fragment>
+      </React.Fragment>
     )
   };
 

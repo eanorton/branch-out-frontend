@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ArtistRecs from "./ArtistRecs";
-import anime from "animejs";
-import { Image, Header } from "semantic-ui-react";
+import { Image } from "semantic-ui-react";
 
 class Artists extends Component {
 
@@ -36,6 +35,7 @@ class Artists extends Component {
         {this.props.searchedArtistTopTracks.map(t=>
           <iframe
           src={`https://open.spotify.com/embed?uri=${t.uri}`}
+          title={t.name}
           key={t.id}
           style={{padding: "10px"}}
           width="300"
