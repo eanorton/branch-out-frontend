@@ -7,9 +7,11 @@ const ArtistRecs = (props) => {
   let artistName = props.artist.name
   let artistId = props.artist.id
 
-  let filteredArtists = props.artistTopTracks.filter(trackObj=> {
-    return trackObj[0].artists.filter(artist=>artist.name === artistName)
-  })[0];
+  // let artistArray = props.artistTopTracks.filter(trackObj=>{
+  //   return trackObj[0].artists.filter(artist=>artist.name === artistName)
+  // });
+  //
+  // let filteredArtists = artistArray[artistArray.length -1]
 
   return (
 
