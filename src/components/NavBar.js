@@ -30,7 +30,6 @@ class NavBar extends Component {
             name={this.state.currentUser}
             active={activeItem === this.state.currentUser}
             onClick={this.handleItemClick}
-
             position="right"
             />
           <Menu.Item
