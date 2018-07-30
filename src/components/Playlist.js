@@ -17,7 +17,7 @@ class Playlist extends Component {
       .then(data=>
         this.setState({
           playlist: data
-        }, ()=>console.log(this.state.playlist.uri))
+        }, ()=>console.log(this.state.playlist))
       )
     })
   };
@@ -31,6 +31,7 @@ class Playlist extends Component {
       <iframe
         src={`https://open.spotify.com/embed?uri=${this.state.playlist.uri}`}
         className="playlist-frame"
+        title={this.state.playlist.name}
         style={{padding: "10px"}}
         width="300"
         height="380"
