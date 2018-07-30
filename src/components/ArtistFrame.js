@@ -2,6 +2,8 @@ import React from "react";
 
 const ArtistFrame = (props) => {
 
+  console.log("hi", props);
+
   //let artistId = props.artist.map(artist=>artist.artists[0].id)
   let artistName = props.artist.map(artist=>artist.artists[0].name)
   let artistObj = props.artist.map(artist=>artist.artists[0])

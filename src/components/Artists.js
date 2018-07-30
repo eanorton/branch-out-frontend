@@ -27,7 +27,7 @@ class Artists extends Component {
           allowtransparency="true"
           allow="encrypted-media"></iframe>)}
 
-          { this.props.allArtists.map(artist=><ArtistFrame handleClick={this.props.handleClick} artist={artist} />) }
+          { this.props.allArtists.map(artist=><ArtistFrame handleClick={this.props.handleClick} artist={artist} searchedArtist={searchedArtistName} />) }
 
       </React.Fragment>
     )

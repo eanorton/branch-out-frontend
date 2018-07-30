@@ -12,7 +12,8 @@ class SuccessContainer extends Component {
     selectedArtist: null,
     currentUser: "",
     searchedArtistTopTracks: null,
-    allArtists: []
+    allArtists: [],
+    iteration: 0
   }
 
   // Sets the search term in state
@@ -24,33 +25,35 @@ class SuccessContainer extends Component {
   // Fetches once a user clicks on one of the recommended artists and appends
 
   handleClick = (artist) => {
-    this.setState({selectedArtist: artist}, ()=>{
-      fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}/${this.state.currentUser}`)
-      .then(response=>response.json())
-      .then(data=>{
-        let newArtists = data.recommended_artists.artists.slice(0,3);
-        let newRecommendedArtistsArray = [...this.state.recommendedArtists, newArtists];
+    if (this.state.iteration < 8) {
+      this.setState({selectedArtist: artist, iteration: this.state.iteration + 1}, ()=>{
+        fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}/${this.state.currentUser}`)
+        .then(response=>response.json())
+        .then(data=>{
+          let newArtists = data.recommended_artists.artists.slice(0,3);
+          let newRecommendedArtistsArray = [...this.state.recommendedArtists, newArtists];
 
-        let newArtist1Recs = data.rec1_artist_tracks.tracks.slice(0,3);
-        newArtists[0].tracks = newArtist1Recs;
+          let newArtist1Recs = data.rec1_artist_tracks.tracks.slice(0,3);
+          newArtists[0].tracks = newArtist1Recs;
 
-        let newArtist2Recs = data.rec2_artist_tracks.tracks.slice(0,3);
-        newArtists[1].tracks = newArtist2Recs;
+          let newArtist2Recs = data.rec2_artist_tracks.tracks.slice(0,3);
+          newArtists[1].tracks = newArtist2Recs;
 
-        let newArtist3Recs = data.rec3_artist_tracks.tracks.slice(0,3);
-        newArtists[2].tracks = newArtist3Recs;
+          let newArtist3Recs = data.rec3_artist_tracks.tracks.slice(0,3);
+          newArtists[2].tracks = newArtist3Recs;
 
-        let allArtists = this.state.allArtists.slice(0);
-        allArtists.push(newArtist1Recs)
-        allArtists.push(newArtist2Recs)
-        allArtists.push(newArtist3Recs)
+          let allArtists = this.state.allArtists.slice(0);
+          allArtists.push(newArtist1Recs)
+          allArtists.push(newArtist2Recs)
+          allArtists.push(newArtist3Recs)
 
-        this.setState({
-          allArtists: allArtists,
-          recommendedArtists: newRecommendedArtistsArray
+          this.setState({
+            allArtists: allArtists,
+            recommendedArtists: newRecommendedArtistsArray
+          })
         })
       })
-    })
+    }
   }
 
   // Fetches artists based on initial search by user

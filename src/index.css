@@ -19,12 +19,13 @@ body {
   width: 100%;
   height: auto;
   padding: 0;
-  background: linear-gradient(to bottom, #47c565, #ece9e6 60%) no-repeat center center fixed;
+  background: linear-gradient(to bottom, #47c565, #ece9e6 65%) no-repeat center fixed;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-blend-mode: color-burn;
 }
 
 
