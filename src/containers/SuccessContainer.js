@@ -13,9 +13,6 @@ class SuccessContainer extends Component {
     selectedArtist: null,
     currentUser: "",
     searchedArtistTopTracks: null,
-    rec1ArtistTopTracks: null,
-    rec2ArtistTopTracks: null,
-    rec3ArtistTopTracks: null,
     allArtists: []
   }
 
@@ -32,7 +29,6 @@ class SuccessContainer extends Component {
       fetch(`http://localhost:4000/api/v1/get-more-artists/${this.state.selectedArtist.id}/${this.state.currentUser}`)
       .then(response=>response.json())
       .then(data=>{
-
         let newArtists = data.recommended_artists.artists.slice(0,3);
         let newRecommendedArtistsArray = [...this.state.recommendedArtists, newArtists];
 
@@ -45,7 +41,6 @@ class SuccessContainer extends Component {
         let newArtist3Recs = data.rec3_artist_tracks.tracks.slice(0,3);
         newArtists[2].tracks = newArtist3Recs;
 
-
         let allArtists = this.state.allArtists.slice(0);
         allArtists.push(newArtist1Recs)
         allArtists.push(newArtist2Recs)
@@ -55,20 +50,9 @@ class SuccessContainer extends Component {
           allArtists: allArtists,
           recommendedArtists: newRecommendedArtistsArray
         })
-
-        // let newArtist1TrackArray = [...this.state.rec1ArtistTopTracks, newArtist1Recs];
-        // let newArtist2TrackArray = [...this.state.rec2ArtistTopTracks, newArtist2Recs];
-        // let newArtist3TrackArray = [...this.state.rec3ArtistTopTracks, newArtist3Recs];
-        //
-        // let myArtists = this.state.allArtists.slice(0);
-        // myArtists.push()
-
-    //     this.setState({
-    //       recommendedArtists: newRecommendedArtistsArray,
-    //       rec1ArtistTopTracks: newArtist1TrackArray,
-    //       rec2ArtistTopTracks: newArtist2TrackArray,
-    //       rec3ArtistTopTracks: newArtist3TrackArray
-  })})}
+      })
+    })
+  }
 
   // Fetches artists based on initial search by user
 
@@ -78,7 +62,6 @@ class SuccessContainer extends Component {
       fetch(`http://localhost:4000/api/v1/search-artists/${this.state.searchterm}/${this.state.currentUser}`)
       .then(response=>response.json())
       .then(data=> {
-
         let newArtists = data.recommended_artists.artists.slice(0,3);
 
         let newArtist1Recs = data.rec1_artist_tracks.tracks.slice(0,3);

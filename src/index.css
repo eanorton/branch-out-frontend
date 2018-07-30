@@ -41,6 +41,12 @@ img {
   margin-bottom: 30px;
 }
 
+.artist-rec-name {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .artist-rec-name:hover {
   text-decoration: underline;
   cursor: pointer;

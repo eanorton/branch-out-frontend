@@ -127,7 +127,3 @@ class App extends Component {
 }
 
 export default App;
-
-{/*         <Router>
-          <Route exact path="/" render={ ()=>(<form><Button style={{borderRadius: "20px"}} positive type="submit" formAction="http://localhost:4000/api/v1/login">LOGIN WITH SPOTIFY</Button></form>)} />
-        </Router> */}
