@@ -12,7 +12,7 @@ const particleOptions = {
       value: 20,
       density: {
         enable: true,
-        value_area: 700}
+        value_area: 600}
       },
       color: {
         value: "#21ba45"
@@ -92,8 +92,6 @@ const particleOptions = {
   }
 
 class App extends Component {
-
-
 
   render() {
 

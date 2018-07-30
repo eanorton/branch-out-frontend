@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "semantic-ui-react";
 
 const ArtistFrame = (props) => {
 
@@ -11,7 +12,7 @@ const ArtistFrame = (props) => {
   return (
     <div>
 
-      <h1 className="artist-rec-name" style={{fontFamily: 'Raleway, sans-serif', letterSpacing: "2px"}} onClick={()=>{props.handleClick(artistObj[0])}}>{artistName.slice(0,1)}</h1>
+      <h1 className="artist-rec-name" style={{fontFamily: 'Raleway, sans-serif', letterSpacing: "2px"}} onClick={()=>{props.handleClick(artistObj[0])}}> {artistName.slice(0,1)} </h1>
 
       {props.artist.map(t=>
         <iframe

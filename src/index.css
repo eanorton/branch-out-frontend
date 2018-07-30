@@ -19,7 +19,7 @@ body {
   width: 100%;
   height: auto;
   padding: 0;
-  background: linear-gradient(to bottom, #47c565, #ece9e6 65%) no-repeat center fixed;
+  background: fixed, linear-gradient(to bottom, #47c565, #ece9e6 65%) no-repeat center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -57,4 +57,17 @@ img {
 
 .artist-name:hover {
   cursor: default;
+}
+
+.playlist {
+  position: fixed;
+  bottom: 100px;
+  right: 140px;
+}
+
+.playlist-frame {
+  position: fixed;
+  bottom: 100px;
+  right: 90px;
+
 }
