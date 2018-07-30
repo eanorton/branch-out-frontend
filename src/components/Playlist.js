@@ -4,14 +4,23 @@ import { Button } from "semantic-ui-react";
 class Playlist extends Component {
 
   state = {
-    toggle: false
+    toggle: false,
+    playlist: "null"
   }
 
   handleClick = () => {
     this.setState({
-      toggle: true
+      toggle: true,
+    }, ()=>{
+      fetch(`http://localhost:4000/api/v1/create-playlist/${this.props.currentUser}`)
+      .then(response=>response.json())
+      .then(data=>
+        this.setState({
+          playlist: data
+        }, ()=>console.log(this.state.playlist.uri))
+      )
     })
-  }
+  };
 
   render() {
     return (
@@ -20,12 +29,12 @@ class Playlist extends Component {
       {this.state.toggle === false ? <Button className="playlist" color="green" style={{fontFamily: "Raleway, sans-serif", borderRadius: "4px"}} onClick={()=>this.handleClick()}>CREATE PLAYLIST</Button>
       :
       <iframe
-        src="https://open.spotify.com/embed?uri=spotify:user:edwardnorton06:playlist:06moHIR0v7Z1KSiUTgkbK0"
+        src={`https://open.spotify.com/embed?uri=${this.state.playlist.uri}`}
         className="playlist-frame"
         style={{padding: "10px"}}
         width="300"
         height="380"
-        frameborder="0.25"
+        frameBorder="0.25"
         allowtransparency="true"
         allow="encrypted-media">
       </iframe>}
