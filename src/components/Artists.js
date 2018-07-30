@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ArtistFrame from "./ArtistFrame";
-import { Image } from "semantic-ui-react";
+import { Image, Icon } from "semantic-ui-react";
 
 class Artists extends Component {
 
@@ -15,6 +15,7 @@ class Artists extends Component {
         <h1 className="artist-name" style={{fontFamily: 'Raleway, sans-serif', letterSpacing: "2px"}}>{searchedArtistName}</h1>
 
         {this.props.searchedArtistTopTracks.map(t=>
+          <React.Fragment>
           <iframe
           src={`https://open.spotify.com/embed?uri=${t.uri}`}
           key={t.id}
@@ -24,7 +25,11 @@ class Artists extends Component {
           height="100"
           frameBorder="0.25"
           allowtransparency="true"
-          allow="encrypted-media"></iframe>)}
+          allow="encrypted-media">
+        </iframe>
+        <Icon className="add-track" name="plus"/>
+        </React.Fragment>
+      )}
 
           { this.props.allArtists.map(artist=><ArtistFrame handleClick={this.props.handleClick} artist={artist} searchedArtist={searchedArtistName} />) }
 
