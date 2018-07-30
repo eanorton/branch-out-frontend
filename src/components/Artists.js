@@ -4,13 +4,6 @@ import { Image } from "semantic-ui-react";
 
 class Artists extends Component {
 
-  componentDidUpdate(){
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: "smooth"
-    });
-  };
-
   render() {
 
     let searchedArtistName = this.props.artist.items[0].name

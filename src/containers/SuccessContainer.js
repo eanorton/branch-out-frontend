@@ -3,7 +3,6 @@ import Searchbar from "../components/Searchbar";
 import Artists from "../components/Artists";
 import { withRouter } from "react-router-dom";
 
-
 class SuccessContainer extends Component {
 
   state = {
@@ -58,6 +57,14 @@ class SuccessContainer extends Component {
 
   fetchArtist = (event) => {
     event.preventDefault()
+
+    this.setState({
+      searchedArtist: "",
+      recommendedArtists: null,
+      searchedArtistTopTracks: null,
+      allArtists: []
+    })
+
     if (this.state.searchterm !== "") {
       fetch(`http://localhost:4000/api/v1/search-artists/${this.state.searchterm}/${this.state.currentUser}`)
       .then(response=>response.json())
@@ -102,7 +109,7 @@ class SuccessContainer extends Component {
         <div>
           <h4 style={{letterSpacing: "2px", fontFamily: 'Raleway'}}>Search by your favorite Artists/Musicians to get recommendations!</h4>
 
-          <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
+          <Searchbar handleSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
           {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} allArtists={this.state.allArtists} /> : null}
         </div>

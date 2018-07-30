@@ -4,7 +4,7 @@ import { Input, Button, Form } from 'semantic-ui-react'
 const Searchbar = (props) => {
   return (
     <div>
-      <Form onSubmit={(event)=>props.onSubmit(event)}>
+      <Form onSubmit={(event)=>{props.handleSubmit(event)}}>
         <Input
           value={props.term}
           onChange={props.handleChange}
