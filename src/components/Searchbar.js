@@ -11,7 +11,7 @@ const Searchbar = (props) => {
           placeholder="Search for Artists"
           style={{padding: "0.5px", width: "20%", fontFamily: 'Raleway, sans-serif'}}
           />
-        <Button color="green" type="submit" value="Search" style={{fontFamily: 'Raleway, sans-serif'}}>SEARCH</Button>
+        <Button color="green" type="submit" value="Search" style={{fontFamily: 'Raleway, sans-serif', borderRadius: "4px"}}>SEARCH</Button>
       </Form>
     </div>
   )

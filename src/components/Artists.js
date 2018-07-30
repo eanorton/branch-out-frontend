@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import ArtistRecs from "./ArtistRecs";
+//import ArtistRecs from "./ArtistRecs";
 import ArtistFrame from "./ArtistFrame";
 import { Image } from "semantic-ui-react";
 
 class Artists extends Component {
 
-  // componentDidUpdate(){
-  //   window.scrollTo({
-  //     top: document.body.scrollHeight,
-  //     behavior: "smooth"
-  //   });
-  // };
+  componentDidUpdate(){
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    });
+  };
 
   render() {
 

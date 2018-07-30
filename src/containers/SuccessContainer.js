@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import Searchbar from "../components/Searchbar";
 import Artists from "../components/Artists";
-import querystring from "query-string";
 import { withRouter } from "react-router-dom";
-import TweenMax from "gsap/TweenMax";
-import { TimelineMax, CSSPlugin, ScrollToPlugin, Draggable } from "gsap/all";
-import anime from "animejs";
-import { Button } from 'semantic-ui-react';
 
 
 class SuccessContainer extends Component {
@@ -122,12 +117,13 @@ class SuccessContainer extends Component {
       <React.Fragment>
 
         <div>
-          <h4 style={{letterSpacing: "1px", fontFamily: 'Raleway'}}>Search by your favorite Artists/Musicians to get recommendations!</h4>
+          <h4 style={{letterSpacing: "2px", fontFamily: 'Raleway'}}>Search by your favorite Artists/Musicians to get recommendations!</h4>
 
           <Searchbar onSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
           {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} allArtists={this.state.allArtists} /> : null}
         </div>
+
     </React.Fragment>
     )
   };
@@ -135,7 +131,3 @@ class SuccessContainer extends Component {
 }
 
 export default withRouter(SuccessContainer);
-
-{/*        <form>
-          <Button color="black" style={{borderRadius: "20px"}} type="submit" formAction={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}>LOGOUT</Button>
-        </form>    */}

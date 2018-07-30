@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SuccessContainer from './containers/SuccessContainer';
 import NavBar from './components/NavBar';
 import { Header } from 'semantic-ui-react';
