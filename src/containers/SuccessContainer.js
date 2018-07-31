@@ -50,11 +50,13 @@ class SuccessContainer extends Component {
           this.setState({
             allArtists: allArtists,
             recommendedArtists: newRecommendedArtistsArray
-          })
+          }, ()=>{window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"})})
         })
       })
     }
   }
+
+
 
   // Fetches artists based on initial search by user
 
@@ -72,6 +74,9 @@ class SuccessContainer extends Component {
       fetch(`http://localhost:4000/api/v1/search-artists/${this.state.searchterm}/${this.state.currentUser}`)
       .then(response=>response.json())
       .then(data=> {
+        if (data.status === 500) {
+          return (null)
+        } else {
         let newArtists = data.recommended_artists.artists.slice(0,3);
 
         let newArtist1Recs = data.rec1_artist_tracks.tracks.slice(0,3);
@@ -94,7 +99,7 @@ class SuccessContainer extends Component {
         searchedArtistTopTracks: data.searched_artist_tracks.tracks.slice(0,3),
         allArtists: allArtists
       })
-    })
+    }})
   }};
 
 

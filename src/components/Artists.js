@@ -24,11 +24,15 @@ class Artists extends Component {
   // Handles the click for adding tracks to the created playlist
 
   handleAddTrackClick = (trackObj) => {
-    fetch(`http://localhost:4000/api/v1/add-track-to-playlist/${this.props.currentUser}/${trackObj.uri}/${this.state.playlist.uri}`)
-    .then(response=>response.json())
-    .then(
-      setTimeout(function(){document.querySelector('.playlist-frame').src = document.querySelector('.playlist-frame').src;}, 31000)
-    )
+    if (this.state.playlist) {
+      fetch(`http://localhost:4000/api/v1/add-track-to-playlist/${this.props.currentUser}/${trackObj.uri}/${this.state.playlist.uri}`)
+      .then(response=>response.json())
+      .then(
+        setTimeout(function(){document.querySelector('.playlist-frame').src = document.querySelector('.playlist-frame').src;}, 30000)
+      )
+    } else {
+      return (null)
+    }
   }
 
   render() {
