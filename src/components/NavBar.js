@@ -38,7 +38,6 @@ class NavBar extends Component {
             active={activeItem === 'Sign Out'}
             onClick={this.handleItemClick}
             href={`http://localhost:4000/api/v1/${this.state.currentUser}/logout`}
-
             />
         </Menu>
         :
@@ -48,7 +47,6 @@ class NavBar extends Component {
             name="Sign In"
             active={activeItem === "Sign In"}
             onClick={this.handleItemClick}
-
             href="http://localhost:4000/api/v1/login"
             position="right"
             />

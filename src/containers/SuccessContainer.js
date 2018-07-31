@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Searchbar from "../components/Searchbar";
 import Artists from "../components/Artists";
-import Playlist from "../components/Playlist";
 import { withRouter } from "react-router-dom";
 
 class SuccessContainer extends Component {
