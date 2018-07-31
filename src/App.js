@@ -12,7 +12,7 @@ const particleOptions = {
       value: 20,
       density: {
         enable: true,
-        value_area: 600}
+        value_area: 650}
       },
       color: {
         value: "#21ba45"
@@ -55,7 +55,7 @@ const particleOptions = {
       },
       move: {
         enable: true,
-        speed: 1.5,
+        speed: 0.8,
         random: false,
         straight: false,
         bounce: true,
