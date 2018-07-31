@@ -67,7 +67,18 @@ img {
 
 .playlist-frame {
   position: fixed;
-  bottom: 100px;
+  bottom: 0px;
   right: 90px;
 
+}
+
+.add-track:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: #3FB53F;
+}
+
+.add-track {
+  padding-bottom: 40px;
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Searchbar from "../components/Searchbar";
 import Artists from "../components/Artists";
-import Playlist from "../components/Playlist";
 import { withRouter } from "react-router-dom";
 
 class SuccessContainer extends Component {
@@ -115,7 +114,9 @@ class SuccessContainer extends Component {
 
           <Searchbar handleSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 
-          {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} allArtists={this.state.allArtists} /> : null}
+          {this.state.recommendedArtists ? <Artists handleClick={this.handleClick} artist={this.state.searchedArtist} recommendedArtists={this.state.recommendedArtists} searchedArtistTopTracks={this.state.searchedArtistTopTracks} allArtists={this.state.allArtists} currentUser={this.state.currentUser} /> : null}
+
+
         </div>
 
     </React.Fragment>
