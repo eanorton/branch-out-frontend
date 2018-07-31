@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 import ArtistFrame from "./ArtistFrame";
+import Playlist from "./Playlist";
 import { Image, Icon } from "semantic-ui-react";
 
 class Artists extends Component {
+
+  state = {
+    playlist: null,
+  }
+
+  createPlaylistClick = () => {
+    fetch(`http://localhost:4000/api/v1/create-playlist/${this.props.currentUser}`)
+    .then(response=>response.json())
+    .then(data=>
+      this.setState({
+        playlist: data
+      })
+    )
+  };
 
   render() {
 
@@ -31,7 +46,9 @@ class Artists extends Component {
         </React.Fragment>
       )}
 
-          { this.props.allArtists.map(artist=><ArtistFrame handleClick={this.props.handleClick} artist={artist} searchedArtist={searchedArtistName} />) }
+          { this.props.allArtists.map(artist=><ArtistFrame handleClick={this.props.handleClick} artist={artist} searchedArtist={searchedArtistName} currentUser={this.props.currentUser} playlist={this.state.playlist} />) }
+
+          <Playlist createPlaylistClick={this.createPlaylistClick} playlist={this.state.playlist} />
 
       </React.Fragment>
     )

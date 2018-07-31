@@ -1,47 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button } from "semantic-ui-react";
 
-class Playlist extends Component {
+const Playlist = (props) => {
 
-  state = {
-    toggle: false,
-    playlist: "null"
-  }
+  return (
 
-  handleClick = () => {
-    this.setState({
-      toggle: true,
-    }, ()=>{
-      fetch(`http://localhost:4000/api/v1/create-playlist/${this.props.currentUser}`)
-      .then(response=>response.json())
-      .then(data=>
-        this.setState({
-          playlist: data
-        }, ()=>console.log(this.state.playlist))
-      )
-    })
-  };
-
-  render() {
-    return (
-      <div>
-
-      {this.state.toggle === false ? <Button className="playlist" color="green" style={{fontFamily: "Raleway, sans-serif", borderRadius: "4px"}} onClick={()=>this.handleClick()}>CREATE PLAYLIST</Button>
-      :
-      <iframe
-        src={`https://open.spotify.com/embed?uri=${this.state.playlist.uri}`}
+    <div>
+      {props.playlist ? <iframe
+        src={`https://open.spotify.com/embed?uri=${props.playlist.uri}`}
         className="playlist-frame"
-        title={this.state.playlist.name}
+        title={props.playlist.name}
         style={{padding: "10px"}}
         width="300"
         height="380"
         frameBorder="0.25"
         allowtransparency="true"
         allow="encrypted-media">
-      </iframe>}
-
-      </div>
-    )}
-}
+      </iframe> :
+      <Button className="playlist"
+        color="green"
+        style={{fontFamily: "Raleway, sans-serif", borderRadius: "4px"}}
+        onClick={()=>props.createPlaylistClick()}>CREATE PLAYLIST
+      </Button>}
+    </div>
+  )
+};
 
 export default Playlist;
