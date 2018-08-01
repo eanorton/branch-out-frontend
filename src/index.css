@@ -32,6 +32,7 @@ iframe {
   margin-left: 20px;
   border-radius: 6px;
   box-shadow: 4px 4px 14px #000000;
+
 }
 
 img {
@@ -65,7 +66,7 @@ img {
 .playlist-frame {
   position: fixed;
   bottom: 0px;
-  right: 90px;
+  right: 80px;
 
 }
 

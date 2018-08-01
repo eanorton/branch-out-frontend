@@ -6,7 +6,6 @@ const Playlist = (props) => {
   return (
 
     <div>
-
       {props.playlist ? <iframe
         src={`https://open.spotify.com/embed?uri=${props.playlist.uri}`}
         className="playlist-frame"

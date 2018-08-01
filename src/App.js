@@ -12,84 +12,85 @@ const particleOptions = {
       value: 20,
       density: {
         enable: true,
-        value_area: 650}
-      },
-      color: {
-        value: "#21ba45"
-      },
-      shape: {
-        stroke:{
-          width: 0,
-          color: "#000000"
-        },
-        polygon:{
-          nb_sides:5
-        },
-      },
-      opacity: {
-        value: 0.09,
-        random: false,
-        anim: {
-          enable: false,
-          speed: 1,
-          opacity_min: 0.1,
-          sync: false
-        }
-      },
-      size: {
-        value: 2.5,
-        random: true,
-        anim: {
-          enable: false,
-          speed: 40,
-          size_min: 0.1,
-          sync: false
-        }
-      },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: "#ffffff",
-        opacity: 0.4,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 0.8,
-        random: false,
-        straight: false,
-        bounce: true,
-        attract: {
-          enable: false,
-          rotateX: 600,
-          rotateY: 1200
-        }
+        value_area: 650
       }
     },
-    interactivity:{
-      detect_on: "window",
-      "events": {
-        "onhover": {
-          "enable":true,
-          "mode":"grab"
-        },
-        onclick: {
-          enable:true,
-          mode: "push"
-        },
-        "resize":true
+    color: {
+      value: "#21ba45"
+    },
+    shape: {
+      stroke:{
+        width: 0,
+        color: "#000000"
       },
-      "modes": {
-        "grab": {
-          "distance":292,
-          "line_linked": {
-            "opacity":1
-          }
-        }
+      polygon:{
+        nb_sides:5
+      },
+    },
+    opacity: {
+      value: 0.09,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false
       }
     },
-    "retina_detect":true
-  }
+    size: {
+      value: 2.5,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 40,
+        size_min: 0.1,
+        sync: false
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 0.8,
+      random: false,
+      straight: false,
+      bounce: true,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200
+      }
+    }
+  },
+  interactivity:{
+    detect_on: "window",
+    "events": {
+      "onhover": {
+        "enable":true,
+        "mode":"grab"
+      },
+      onclick: {
+        enable:true,
+        mode: "push"
+      },
+      "resize":true
+    },
+    "modes": {
+      "grab": {
+        "distance":292,
+        "line_linked": {
+          "opacity":1
+        }
+      }
+    }
+  },
+  "retina_detect":true
+}
 
 class App extends Component {
 
