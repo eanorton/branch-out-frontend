@@ -70,7 +70,6 @@ img {
 }
 
 .add-track:hover {
-  text-decoration: underline;
   cursor: pointer;
   transition: color 0.3s;
   color: #3FB53F;

@@ -21,14 +21,16 @@ class Artists extends Component {
     )
   };
 
-  // Handles the click for adding tracks to the created playlist
+  // Handles the click for adding tracks to the created playlist - only if there is a created playlist
 
   handleAddTrackClick = (trackObj) => {
     if (this.state.playlist) {
       fetch(`http://localhost:4000/api/v1/add-track-to-playlist/${this.props.currentUser}/${trackObj.uri}/${this.state.playlist.uri}`)
       .then(response=>response.json())
       .then(
-        setTimeout(function(){document.querySelector('.playlist-frame').src = document.querySelector('.playlist-frame').src;}, 30000)
+        setTimeout(function() {
+          document.querySelector('.playlist-frame').src = document.querySelector('.playlist-frame').src;
+        }, 1000)
       )
     } else {
       return (null)
