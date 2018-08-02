@@ -24,7 +24,7 @@ class NavBar extends Component {
     return (
       <React.Fragment>
       {this.state.currentUser ?
-        <Menu inverted style={{width: "100%", background: 'rgba(71, 71, 71, 0.25)', fontFamily: 'Raleway, sans-serif'}}>
+        <Menu inverted style={{width: "100%", background: 'rgba(71, 71, 71, 0.25)', fontFamily: 'Raleway, sans-serif', letterSpacing: "1px"}}>
           <Menu.Item
             style={{padding: "18px"}}
             name={this.state.currentUser}
@@ -41,10 +41,10 @@ class NavBar extends Component {
             />
         </Menu>
         :
-        <Menu inverted style={{background: 'rgba(71, 71, 71, 0.25)', fontFamily: 'Raleway, sans-serif'}}>
+        <Menu inverted style={{background: 'rgba(71, 71, 71, 0.25)', fontFamily: 'Raleway, sans-serif', letterSpacing: "1px"}}>
           <Menu.Item
             style={{padding: "18px"}}
-            name="Sign In"
+            name="Sign In With Spotify"
             active={activeItem === "Sign In"}
             onClick={this.handleItemClick}
             href="http://localhost:4000/api/v1/login"

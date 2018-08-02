@@ -115,7 +115,7 @@ class SuccessContainer extends Component {
       <React.Fragment>
 
         <div>
-          <h4 style={{letterSpacing: "2px", fontFamily: 'Raleway'}}>Search by your favorite Artists/Musicians to get recommendations!</h4>
+          <h4 style={{letterSpacing: "2px", fontFamily: 'Raleway'}}>Search by your favorite Artist to begin branching out!</h4>
 
           <Searchbar handleSubmit={this.fetchArtist} term={this.state.searchterm} handleChange={this.handleChange} />
 

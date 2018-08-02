@@ -68,7 +68,7 @@ const particleOptions = {
     }
   },
   interactivity:{
-    detect_on: "window",
+    detect_on: "canvas",
     "events": {
       "onhover": {
         "enable":true,
@@ -112,7 +112,7 @@ class App extends Component {
           </Header>
 
           <Router>
-            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"400", letterSpacing: "4px", fontFamily: 'Raleway, sans-serif'}}>SIGN IN WITH SPOTIFY TO BEGIN SEARCHING BY ARTISTS TO FIND RECOMMENDATIONS</h3>) } />
+            <Route exact path="/" render={ ()=>(<h3 style={{color: "white", fontWeight:"400", letterSpacing: "4px", fontFamily: 'Raleway, sans-serif'}}>SIGN IN WITH SPOTIFY TO SEARCH BY ARTIST FOR RECOMMENDATIONS</h3>) } />
           </Router>
 
           <Router>
